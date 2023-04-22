@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Anuphan&display=swap');
+
+:root {
+    --primary-color: #0B98FF;
+    --blue-color: #0b2e47;
+    --secondary-color: #ffffff;
+    --warning-color: #efb00f;
+    --error-color: #da4e4e;
+}
+
+* {
+    font-family: 'Anuphan', sans-serif;
+}
