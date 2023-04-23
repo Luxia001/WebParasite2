@@ -1,0 +1,32 @@
+<div class="flex justify-center items-center w-full mt-8 mb-5 text-xl font-bold">
+    <span>อัพโหลดรูปภาพ</span>
+</div>
+<div class="flex justify-center items-center w-full">
+    <input id="image_upload" type="file" accept="image/png, image/jpeg" hidden (change)="selectImage($event)"/>
+    <div class="max-w-2xl w-full h-80 bg-gray-200 rounded-xl cursor-pointer p-3 hover:bg-gray-300 transition-all ease-in duration-200 drop-shadow-lg" (click)="openUploadFile()" *ngIf="!isSelect">
+        <div class="border-dashed border-2 border-sky-500 w-full h-full rounded-xl flex justify-center items-center">
+            <div class="text-center">
+                <div class="flex justify-center items-center mb-4">
+                    <div class="rounded-full w-32 h-32 bg-sky-500 flex justify-center items-center text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                          </svg>                          
+                    </div>
+                </div>
+                <span class="text-lg font-bold text-gray-600">คุณยังไม่ได้อัพโหลดรูปภาพ</span>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-2xl w-full h-80 bg-gray-200 rounded-xl cursor-pointer hover:bg-gray-300 transition-all ease-in duration-200 drop-shadow-lg hover:opacity-70" *ngIf="isSelect" (click)="openUploadFile()">
+        <img src="{{image}}" class="w-full h-full rounded-xl">
+    </div>
+</div>
+<div class="flex justify-center items-center w-full">
+    <div class="flex justify-between items-center max-w-2xl w-full mt-5">
+         <span class="text-left">ความละเอียดขั้นต้่ำ 224x224</span>
+         <span class="text-left">ไฟล์ที่รองรับ : png jpeg jpg</span>
+    </div>
+</div>
+<div class="flex justify-center items-center w-full mt-5">
+    <button class="bg-[var(--primary-color)] p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70">Predict</button>
+</div>

@@ -6,10 +6,9 @@
     </button>
     <span class="ml-2 font-bold mt-3">Parasite Type</span>  
 </div>
-<app-homepage class="w-full" *ngIf="isCollapsed"></app-homepage>
 
-<div class="relative" *ngIf="!isCollapsed">
-    <div class="w-64 min-h-screen text-white bg-[var(--primary-color)] absolute top-0 left-0" >
+<div class="relative">
+    <div class="w-64 min-h-screen text-white bg-[var(--primary-color)] absolute top-0 left-0 z-[9999]" *ngIf="!isCollapsed">
         <div class="flex flex-between items-center mt-3 pl-3">
             <button class="rounded-full hover:bg-[var(--secondary-color)] hover:text-[var(--primary-color)] p-2 transition-all ease-in duration-200" (click)="toggleCollapse()" >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -63,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class="h-[52px] w-full bg-[var(--primary-color)]"></div>
+    <div class="h-[52px] w-full bg-[var(--primary-color)]" *ngIf="!isCollapsed"></div>
     <app-homepage class="w-full pt-10"></app-homepage>
 </div>
 
