@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PredictApiService } from '../services/api/predict-api.service';
+import { PredictResultModel } from '../models/result_model';
 
 @Component({
   selector: 'app-homepage',
@@ -7,15 +9,31 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
+  constructor(private predictAPI: PredictApiService) {}
+
   fd = new FormData();
   image = "";
   isSelect = false;
+  showResult = false;
+  predictResult: PredictResultModel = {
+    Fluke: 0,
+    RoundWorms: 0,
+    TapeWorms: 0,
+    class: ""
+  }
 
   openUploadFile() {
     document.getElementById("image_upload")?.click();
   }
 
+  reset() {
+    this.isSelect = false;
+    this.showResult = false;
+    this.image = "";
+  }
+
   selectImage(event: any) {
+    this.fd = new FormData();
     if (!event.target.files[0] || event.target.files[0].length == 0) {
       return;
     }
@@ -23,7 +41,7 @@ export class HomepageComponent {
     let reader = new FileReader();
     let file = event.target.files[0];
 
-    this.fd.append('files', file)
+    this.fd.append('image', file)
 
     
 
@@ -32,10 +50,17 @@ export class HomepageComponent {
       if (reader.result != null) {
         this.isSelect = true;
         this.image = reader.result.toString();
-        this.fd = new FormData;
       }
     };
 
+  }
+
+  submit() {
+    console.log(this.fd)
+    this.predictAPI.predict(this.fd).subscribe(data => {
+      this.predictResult = data;
+      this.showResult = true;
+    })
   }
 
 }

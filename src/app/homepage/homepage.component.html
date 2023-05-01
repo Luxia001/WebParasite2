@@ -28,5 +28,40 @@
     </div>
 </div>
 <div class="flex justify-center items-center w-full mt-5">
-    <button class="bg-[var(--primary-color)] p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70">Predict</button>
+    <button class="bg-[var(--primary-color)] p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70" (click)="submit()">Predict</button>
+    <button class="bg-[var(--blue-color)] ml-5 p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70" (click)="reset()">
+        <div class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+                Reset
+        </div>
+    </button>
+</div>
+<div class="flex justify-center items-center w-full mt-5" *ngIf="showResult">
+    <div class="max-w-2xl w-full bg-[var(--bg-color)] rounded-xl p-3 transition-all ease-in duration-200 drop-shadow-lg text-center pb-10">
+        <span class="text-md font-bold">ผลการทำนาย</span>
+        <div class="text-left flex justify-between mt-5">
+            <span>พยาธิตัวกลม</span>
+            <div class="relative">
+                <div class="absolute top-0 left-[45%] z-[9999] text-sm">{{predictResult.RoundWorms}}%</div>
+                <progress class="progress progress-info w-56 h-5" value="{{predictResult.RoundWorms}}" max="100"></progress>
+            </div>
+            
+        </div>
+        <div class="text-left flex justify-between mt-3">
+            <span>พยาธิตัวตืด</span>
+            <div class="relative">
+                <div class="absolute top-0 left-[45%] z-[9999] text-sm">{{predictResult.TapeWorms}}%</div>
+                <progress class="progress progress-success w-56 h-5" value="{{predictResult.TapeWorms}}" max="100"></progress>
+            </div>
+        </div>
+        <div class="text-left flex justify-between mt-3">
+            <span>พยาธิใบไม้</span>
+            <div class="relative">
+                <div class="absolute top-0 left-[45%] z-[9999] text-sm">{{predictResult.Fluke}}%</div>
+                <progress class="progress progress-warning w-56 h-5" value="{{predictResult.Fluke}}" max="100"></progress>
+            </div>
+        </div>
+    </div>
 </div>
