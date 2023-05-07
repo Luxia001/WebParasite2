@@ -40,9 +40,9 @@
                 <div class="mt-1 p-2 rounded-lg bg-[var(--secondary-color)] w-full text-[var(--primary-color)] text-sm"
                     *ngIf="dropdown1">
                     <div *ngFor="let p of paraModel">
-                        <a href="/parasite/{{p._id}}" class="rounded p-3  hover:bg-[var(--primary-color)] hover:text-white" *ngIf="p.type == 'พยาธิตัวกลม'" >
+                        <div [routerLink]="/parasite/{{p._id}}" class="rounded p-3  hover:bg-[var(--primary-color)] hover:text-white" *ngIf="p.type == 'พยาธิตัวกลม'" >
                             {{p.name}}
-                        </a>
+                        </div>
                     </div>
                 </div>
                 <!-- <div class="h-[1px] w-full bg-[var(--blue-color)] mt-1"></div> -->
@@ -53,9 +53,9 @@
                 <div class="mt-1 p-2 rounded-lg bg-[var(--secondary-color)] w-full text-[var(--primary-color)] text-sm"
                     *ngIf="dropdown2">
                     <div *ngFor="let p of paraModel">
-                        <a href="/parasite/{{p._id}}" class="rounded p-3  hover:bg-[var(--primary-color)] hover:text-white" *ngIf="p.type == 'พยาธิตัวตืด'" >
+                        <div [routerLink]="/parasite/{{p._id}}" class="rounded p-3  hover:bg-[var(--primary-color)] hover:text-white" *ngIf="p.type == 'พยาธิตัวตืด'" >
                             {{p.name}}
-                        </a>
+                        <div>
                     </div>
                 </div>
                 <!-- <div class="h-[1px] w-full bg-[var(--blue-color)] mt-1"></div> -->
