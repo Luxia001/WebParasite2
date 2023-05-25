@@ -10,4 +10,3 @@ export interface ParasiteModel {
     symptom: string
     type: string
   }
-  

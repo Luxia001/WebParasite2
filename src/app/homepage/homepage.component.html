@@ -1,67 +1,250 @@
-<div class="flex justify-center items-center w-full mt-8 mb-5 text-xl font-bold">
-    <span>อัพโหลดรูปภาพ</span>
+<div
+  class="flex justify-center items-center w-full mt-8 mb-5 text-xl font-bold"
+>
+  <span>อัพโหลดรูปภาพ</span>
 </div>
 <div class="flex justify-center items-center w-full">
-    <input id="image_upload" type="file" accept="image/png, image/jpeg" hidden (change)="selectImage($event)"/>
-    <div class="max-w-2xl w-full h-80 bg-gray-200 rounded-xl cursor-pointer p-3 hover:bg-gray-300 transition-all ease-in duration-200 drop-shadow-lg" (click)="openUploadFile()" *ngIf="!isSelect">
-        <div class="border-dashed border-2 border-sky-500 w-full h-full rounded-xl flex justify-center items-center">
-            <div class="text-center">
-                <div class="flex justify-center items-center mb-4">
-                    <div class="rounded-full w-32 h-32 bg-sky-500 flex justify-center items-center text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                          </svg>                          
-                    </div>
-                </div>
-                <span class="text-lg font-bold text-gray-600">คุณยังไม่ได้อัพโหลดรูปภาพ</span>
-            </div>
+  <input
+    id="image_upload"
+    type="file"
+    accept="image/png, image/jpeg"
+    hidden
+    (change)="selectImage($event)"
+  />
+  <div
+    class="max-w-2xl w-full h-80 bg-gray-200 rounded-xl cursor-pointer p-3 hover:bg-gray-300 transition-all ease-in duration-200 drop-shadow-lg"
+    (click)="openUploadFile()"
+    *ngIf="!isSelect"
+  >
+    <div
+      class="border-dashed border-2 border-sky-500 w-full h-full rounded-xl flex justify-center items-center"
+    >
+      <div class="text-center">
+        <div class="flex justify-center items-center mb-4">
+          <div
+            class="rounded-full w-32 h-32 bg-sky-500 flex justify-center items-center text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-10 h-10"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+              />
+            </svg>
+          </div>
         </div>
+        <span class="text-lg font-bold text-gray-600"
+          >คุณยังไม่ได้อัพโหลดรูปภาพ</span
+        >
+      </div>
     </div>
-    <div class="max-w-2xl w-full h-80 bg-gray-200 rounded-xl cursor-pointer hover:bg-gray-300 transition-all ease-in duration-200 drop-shadow-lg hover:opacity-70" *ngIf="isSelect" (click)="openUploadFile()">
-        <img src="{{image}}" class="w-full h-full rounded-xl">
-    </div>
+  </div>
+  <div
+    class="max-w-2xl w-full h-80 bg-gray-200 rounded-xl cursor-pointer hover:bg-gray-300 transition-all ease-in duration-200 drop-shadow-lg hover:opacity-70"
+    *ngIf="isSelect"
+    (click)="openUploadFile()"
+  >
+    <img src="{{image}}" class="w-full h-full rounded-xl" />
+  </div>
 </div>
 <div class="flex justify-center items-center w-full">
-    <div class="flex justify-between items-center max-w-2xl w-full mt-5">
-         <span class="text-left">ความละเอียดขั้นต้่ำ 224x224</span>
-         <span class="text-left">ไฟล์ที่รองรับ : png jpeg jpg</span>
-    </div>
+  <div class="flex justify-between items-center max-w-2xl w-full mt-5">
+    <span class="text-left">ความละเอียดขั้นต้่ำ 224x224</span>
+    <span class="text-left">ไฟล์ที่รองรับ : png jpeg jpg</span>
+  </div>
 </div>
+
 <div class="flex justify-center items-center w-full mt-5">
-    <button class="bg-[var(--primary-color)] p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70" (click)="submit()">Predict</button>
-    <button class="bg-[var(--blue-color)] ml-5 p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70" (click)="reset()">
-        <div class="flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-              </svg>
-                Reset
-        </div>
-    </button>
-</div>
-<div class="flex justify-center items-center w-full mt-5" *ngIf="showResult">
-    <div class="max-w-2xl w-full bg-[var(--bg-color)] rounded-xl p-3 transition-all ease-in duration-200 drop-shadow-lg text-center pb-10">
-        <span class="text-md font-bold">ผลการทำนาย</span>
-        <div class="text-left flex justify-between mt-5">
-            <span>พยาธิตัวกลม</span>
-            <div class="relative">
-                <div class="absolute top-0 left-[45%] z-[9999] text-sm">{{predictResult.RoundWorms}}%</div>
-                <progress class="progress progress-info w-56 h-5" value="{{predictResult.RoundWorms}}" max="100"></progress>
-            </div>
-            
-        </div>
-        <div class="text-left flex justify-between mt-3">
-            <span>พยาธิตัวตืด</span>
-            <div class="relative">
-                <div class="absolute top-0 left-[45%] z-[9999] text-sm">{{predictResult.TapeWorms}}%</div>
-                <progress class="progress progress-success w-56 h-5" value="{{predictResult.TapeWorms}}" max="100"></progress>
-            </div>
-        </div>
-        <div class="text-left flex justify-between mt-3">
-            <span>พยาธิใบไม้</span>
-            <div class="relative">
-                <div class="absolute top-0 left-[45%] z-[9999] text-sm">{{predictResult.Fluke}}%</div>
-                <progress class="progress progress-warning w-56 h-5" value="{{predictResult.Fluke}}" max="100"></progress>
-            </div>
-        </div>
+  <button
+    class="bg-[var(--primary-color)] p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70"
+    (click)="submit()"
+  >
+    Predict
+  </button>
+  <button
+    class="bg-[var(--blue-color)] ml-5 p-2 pl-10 pr-10 rounded-full text-white text-md font-bold transition-all ease-in duration-200 hover:opacity-70"
+    (click)="reset()"
+  >
+    <div class="flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-4 h-4 mr-1"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+        />
+      </svg>
+      Reset
     </div>
+  </button>
 </div>
+
+<div class="flex justify-center items-center w-full mt-5" *ngIf="showResult">
+  <div
+    class="max-w-2xl w-full bg-[var(--bg-color)] rounded-xl p-3 transition-all ease-in duration-200 drop-shadow-lg text-center pb-10"
+  >
+    <span class="text-md font-bold">ผลการทำนาย</span>
+
+    <div class="text-left flex justify-between mt-5">
+      <span>พยาธิตัวกลม</span>
+      <div class="relative">
+        <div class="absolute top-0 left-[45%] z-[9999] text-sm">
+          {{ predictResult.result[0].RoundWorms }}%
+        </div>
+        <progress
+          class="progress progress-info w-56 h-5"
+          value="{{ predictResult.result[0].RoundWorms }}"
+          max="100"
+        ></progress>
+      </div>
+    </div>
+
+    <div class="text-left flex justify-between mt-3">
+      <span>พยาธิตัวตืด</span>
+      <div class="relative">
+        <div class="absolute top-0 left-[45%] z-[9999] text-sm">
+          {{ predictResult.result[0].TapeWorms }}%
+        </div>
+        <progress
+          class="progress progress-success w-56 h-5"
+          value="{{ predictResult.result[0].TapeWorms }}"
+          max="100"
+        ></progress>
+      </div>
+    </div>
+    <div class="text-left flex justify-between mt-3">
+      <span>พยาธิใบไม้</span>
+      <div class="relative">
+        <div class="absolute top-0 left-[45%] z-[9999] text-sm">
+          {{ predictResult.result[0].Fluke }}%
+        </div>
+        <progress
+          class="progress progress-warning w-56 h-5"
+          value="{{ predictResult.result[0].Fluke }}"
+          max="100"
+        ></progress>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center items-center w-full mt-5">
+  <div
+    class="max-w-2xl w-full bg-[#F3CDCD] justify-between text-center rounded-xl p-3" *ngIf="showResult"
+  >
+    <span class="mt-[5%] font-bold text-md">Predict result</span>
+
+    <div class="bg-[#ffffff] w-[90%] ml-[5%] rounded-xl pr-10">
+
+      <div class="w-1/2 bg-[#ffffff] rounded-xl text-left mt-3 p-3">
+        <span class="font-bold">Model 1: CNN Gray Scale</span>
+
+        <div class="flex justify-between pt-5">
+          <div class="justify-center items-center text-center">
+            <span class="text-sky-500 font-black">{{ predictResult.result[0].RoundWorms }}%</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-green-500 font-black">{{ predictResult.result[0].TapeWorms }}%</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-yellow-500 font-black">{{ predictResult.result[0].Fluke }}%</span>
+          </div>
+        </div>
+        <div class="flex justify-between pt-5">
+          <div class="justify-center items-center text-center">
+            <span class="text-sky-500 font-black">พยาธิตัวกลม</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-green-500 font-black">พยาธิตัวตืด</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-yellow-500 font-black">พยาธิใบไม้</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-1/2 bg-[#ffffff] rounded-xl text-left mt-5 p-3">
+        <span class="font-bold">Model 2: Teachable</span>
+
+        <div class="flex justify-between pt-5">
+          <div class="justify-center items-center text-center">
+            <span class="text-sky-500 font-black">{{ predictResult.result[1].RoundWorms }}%</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-green-500 font-black">{{ predictResult.result[1].TapeWorms }}%</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-yellow-500 font-black">{{ predictResult.result[1].Fluke }}%</span>
+          </div>
+        </div>
+        <div class="flex justify-between pt-5">
+          <div class="justify-center items-center text-center">
+            <span class="text-sky-500 font-black">พยาธิตัวกลม</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-green-500 font-black">พยาธิตัวตืด</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-yellow-500 font-black">พยาธิใบไม้</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="relative w-1/2 bg-[#ffffff] rounded-xl text-left ml-[55%] mt-[-25%] p-3"
+      >
+        <span class="font-bold">Model 3: VGG16</span>
+
+        <div class="flex justify-between pt-5">
+          <div class="justify-center items-center text-center">
+            <span class="text-sky-500 font-black">{{ predictResult.result[2].RoundWorms}}%</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-green-500 font-black">{{ predictResult.result[2].TapeWorms }}%</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-yellow-500 font-black">{{ predictResult.result[2].Fluke }}%</span>
+          </div>
+        </div>
+        <div class="flex justify-between pt-5">
+          <div class="justify-center items-center text-center">
+            <span class="text-sky-500 font-black">พยาธิตัวกลม</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-green-500 font-black">พยาธิตัวตืด</span>
+          </div>
+          <div class="justify-center items-center text-center">
+            <span class="text-yellow-500 font-black">พยาธิใบไม้</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+<div class="flex-grow p-5">
+  <canvas id="chart1"></canvas>
+</div>
+<div class="flex-grow p-5">
+  <canvas id="chart2"></canvas>
+</div>
+<div class="flex-grow p-5">
+  <canvas id="chart3"></canvas>
+</div>
+

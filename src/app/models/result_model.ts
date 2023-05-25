@@ -1,6 +1,10 @@
 export interface PredictResultModel {
-    Fluke: number
-    RoundWorms: number
-    TapeWorms: number
-    class: string
-  }
+  result: Result[]
+}
+
+export interface Result {
+  Fluke: number
+  RoundWorms: number
+  TapeWorms: number
+  class: string
+}

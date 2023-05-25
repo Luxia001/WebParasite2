@@ -8,17 +8,21 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ParasiteComponent } from './parasite/parasite.component';
 
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     HomepageComponent,
     ParasiteComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MdbCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

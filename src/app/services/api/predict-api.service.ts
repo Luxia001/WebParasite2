@@ -10,7 +10,7 @@ export class PredictApiService {
 
   constructor(private http: HttpClient) { }
 
-  predict(fd: FormData): Observable<PredictResultModel>  {
+  predict(fd : FormData): Observable<PredictResultModel>  {
     return this.http.post<PredictResultModel>(`http://127.0.0.1:8080/predict`, fd)
 
   }
