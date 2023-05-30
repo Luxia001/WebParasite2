@@ -23,7 +23,7 @@ export class ParasiteComponent implements OnInit {
     symptom: '',
     type: ''
   }
-  
+
   ngOnInit(): void {
     this.paraAPI.getParasite(this.route.snapshot.paramMap.get('id') || '').subscribe((data) => {
       this.paraModel = data;

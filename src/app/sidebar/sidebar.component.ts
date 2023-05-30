@@ -7,6 +7,7 @@ import { ParasiteModel } from '../models/parasite';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
+
 export class SidebarComponent implements OnInit {
   isCollapsed = true;
   dropdown1 = false;
@@ -21,7 +22,7 @@ export class SidebarComponent implements OnInit {
       this.paraModel = data;
     })
   }
-  
+
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
   }
@@ -30,7 +31,7 @@ export class SidebarComponent implements OnInit {
     this.dropdown1 = !this.dropdown1;
   }
 
-  
+
   toggleDropdown2() {
     this.dropdown2 = !this.dropdown2;
   }

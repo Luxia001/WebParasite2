@@ -1,9 +1,5 @@
-<div
-  class="bg-gradient-to-r from-black from-60% to-[#0040E4] pt-16 pl-12 pb-[100px] mb-10"
->
-  <span class="text-[32px] text-[#ffffff] font-bold"
-    >{{ paraModel.name }} ({{ paraModel.name_eng }})</span
-  >
+<div class="bg-gradient-to-r from-black from-60% to-[#0040E4] pt-16 pl-12 pb-[100px] mb-10">
+  <span class="text-[32px] text-[#ffffff] font-bold">{{ paraModel.name }} ({{ paraModel.name_eng }})</span>
   <div class="mt-8 pl-[200px] text-2xl w-full max-w-[85%] text-[#ffffff]">
     {{ paraModel.description }}
   </div>
@@ -18,19 +14,36 @@
 
 <!-- ลักษณะ -->
 
+
 <div class="flex mb-10 justify-center ">
-  <div class="h-96 mx-5 max-w-[500px] carousel carousel-vertical rounded-xl bg-gray-800">
+  <div class="h-96 mx-5 max-w-[500px] carousel carousel-vertical rounded-xl pt-3 bg-gray-800">
+
+    <div class="carousel-item h-full flex">
+      <img src="assets/Screenshot 2023-04-24 234405.png" />
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div class=" bg-pink-500 h-2.5 rounded-full" style="width: 25%"></div>
+    </div>
+
     <div class="carousel-item h-full">
       <img src="assets/Screenshot 2023-04-24 234405.png" />
     </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div class=" bg-pink-600 h-2.5 rounded-full" style="width: 50%"></div>
+    </div>
+
     <div class="carousel-item h-full">
       <img src="assets/Screenshot 2023-04-24 234405.png" />
     </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div class=" bg-pink-700 h-2.5 rounded-full" style="width: 75%"></div>
+    </div>
+
     <div class="carousel-item h-full">
       <img src="assets/Screenshot 2023-04-24 234405.png" />
     </div>
-    <div class="carousel-item h-full">
-      <img src="assets/Screenshot 2023-04-24 234405.png" />
+    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <div class=" bg-pink-800 h-2.5 rounded-full" style="width: 100%"></div>
     </div>
   </div>
 
@@ -42,14 +55,9 @@
 <!-- การติดต่อ -->
 
 <div class="flex w-full mb-10 justify-between">
-  <span class="text-4xl text-[#272727] font-bold px-[20%] py-10"
-    >การติดต่อ</span
-  >
-  <img
-    src="assets/Screenshot 2023-04-24 234405.png"
-    alt="  "
-    class="max-w-[500px] w-1/3 h-40 rounded-tl-[45px] rounded-bl-[45px]"
-  />
+  <span class="text-4xl text-[#272727] font-bold px-[20%] py-10">การติดต่อ</span>
+  <img src="assets/Screenshot 2023-04-24 234405.png" alt="  "
+    class="max-w-[500px] w-1/3 h-40 rounded-tl-[45px] rounded-bl-[45px]" />
 </div>
 
 <div class="px-[10%] mb-10">
@@ -61,14 +69,9 @@
 <!-- อาการ -->
 
 <div class="flex w-full mb-10 justify-between">
-  <img
-    src="assets/Screenshot 2023-04-24 234405.png"
-    alt="  "
-    class="max-w-[500px] w-1/3 h-40 rounded-tr-[45px] rounded-br-[45px]"
-  />
-  <span class="text-4xl text-[#272727] font-bold px-[20%] py-10"
-    >อาการโรคพยาธิ</span
-  >
+  <img src="assets/Screenshot 2023-04-24 234405.png" alt="  "
+    class="max-w-[500px] w-1/3 h-40 rounded-tr-[45px] rounded-br-[45px]" />
+  <span class="text-4xl text-[#272727] font-bold px-[20%] py-10">อาการโรคพยาธิ</span>
 </div>
 
 <div class="px-[10%] mb-10">
@@ -81,26 +84,16 @@
   <!-- การรักษา -->
 
   <div class="flex rounded-xl mb-10">
-    <div
-      class="px-[10%] py-10 bg-[#42E1C5] text-center rounded-bl-xl rounded-tl-xl"
-    >
+    <div class="px-[10%] py-10 bg-[#42E1C5] text-center rounded-bl-xl rounded-tl-xl">
       <span class="text-4xl text-[#190592] font-bold">การรักษา</span>
 
       <div class="mt-[10%]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="150"
-          height="150"
-          fill="currentColor"
-          class="bi bi-heart-pulse-fill"
-          viewBox="0 0 16 16"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor"
+          class="bi bi-heart-pulse-fill" viewBox="0 0 16 16">
           <path
-            d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9H1.475Z"
-          />
+            d="M1.475 9C2.702 10.84 4.779 12.871 8 15c3.221-2.129 5.298-4.16 6.525-6H12a.5.5 0 0 1-.464-.314l-1.457-3.642-1.598 5.593a.5.5 0 0 1-.945.049L5.889 6.568l-1.473 2.21A.5.5 0 0 1 4 9H1.475Z" />
           <path
-            d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.88Z"
-          />
+            d="M.88 8C-2.427 1.68 4.41-2 7.823 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C11.59-2 18.426 1.68 15.12 8h-2.783l-1.874-4.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.88Z" />
         </svg>
       </div>
     </div>
@@ -119,18 +112,10 @@
       <span class="text-4xl font-bold">การป้องกัน</span>
 
       <div class="mt-[10%]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="150"
-          height="150"
-          fill="#0B98FF"
-          class="bi bi-shield-fill-plus"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm-.5 5a.5.5 0 0 1 1 0v1.5H10a.5.5 0 0 1 0 1H8.5V9a.5.5 0 0 1-1 0V7.5H6a.5.5 0 0 1 0-1h1.5V5z"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#0B98FF" class="bi bi-shield-fill-plus"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm-.5 5a.5.5 0 0 1 1 0v1.5H10a.5.5 0 0 1 0 1H8.5V9a.5.5 0 0 1-1 0V7.5H6a.5.5 0 0 1 0-1h1.5V5z" />
         </svg>
       </div>
     </div>

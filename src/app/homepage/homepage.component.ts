@@ -65,7 +65,7 @@ export class HomepageComponent implements OnInit{
         {
           label: 'Model 1',
           data: [this.predictResult.result[0].RoundWorms, this.predictResult.result[0].TapeWorms, this.predictResult.result[0].Fluke],
-          backgroundColor: ["#129183", "#129183", "#129183"],
+          backgroundColor: ["#25D1F1", "#129183", "#EBC52B"],
         }
       ]
     };
@@ -97,7 +97,7 @@ export class HomepageComponent implements OnInit{
         {
           label: 'Model 2',
           data: [this.predictResult.result[1].RoundWorms, this.predictResult.result[1].TapeWorms, this.predictResult.result[1].Fluke],
-          backgroundColor: ["#129183", "#129183", "#129183"],
+          backgroundColor: ["#25D1F1", "#129183", "#EBC52B"],
         }
       ]
     };
@@ -129,7 +129,7 @@ export class HomepageComponent implements OnInit{
         {
           label: 'Model 3',
           data: [this.predictResult.result[2].RoundWorms, this.predictResult.result[2].TapeWorms, this.predictResult.result[2].Fluke],
-          backgroundColor: ["#129183", "#129183", "#129183"],
+          backgroundColor: ["#25D1F1", "#129183", "#EBC52B"],
         }
       ]
     };
