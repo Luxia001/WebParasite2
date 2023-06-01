@@ -16,6 +16,7 @@ export class HomepageComponent implements OnInit{
   image = '';
   isSelect = false;
   showResult = false;
+  loading = false;
 
   predictResult: PredictResultModel = {
     result: []
@@ -156,14 +157,22 @@ export class HomepageComponent implements OnInit{
 
 
   submit() {
+    this.loading = true;
     console.log(this.fd);
-    this.predictAPI.predict(this.fd).subscribe((data) => {
+    this.predictAPI.predict(this.fd).subscribe(async (data) => {
+      this.loading = false;
       this.predictResult = data;
+      await this.delay(10);
       this.showResult = true;
       this.graphModel1();
       this.graphModel2();
       this.graphModel3();
+
     });
+  }
+
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
 

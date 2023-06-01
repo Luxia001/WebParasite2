@@ -21,7 +21,8 @@ export class ParasiteComponent implements OnInit {
     nature: '',
     protection: '',
     symptom: '',
-    type: ''
+    type: '',
+    images: []
   }
 
   ngOnInit(): void {

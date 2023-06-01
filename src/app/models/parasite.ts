@@ -9,4 +9,5 @@ export interface ParasiteModel {
     protection: string
     symptom: string
     type: string
+    images: string[]
   }

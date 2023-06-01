@@ -12,7 +12,7 @@
 </div>
 
 <div class="relative">
-  <div class="w-64 h-full text-white bg-[var(--primary-color)] absolute top-0 left-0 z-[9999] opacity-95"
+  <div class="w-64 h-full min-h-[1000px] text-white bg-[var(--primary-color)] absolute top-0 left-0 z-[9999] opacity-95"
     *ngIf="!isCollapsed">
     <div class="flex flex-between items-center mt-3 pl-3">
       <button
@@ -34,21 +34,24 @@
           <span class="ml-2 text-sm font-medium">หน้าแรก</span>
         </a>
         <!-- <div class="h-[1px] w-full bg-[var(--blue-color)] mt-1"></div> -->
-        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-white hover:text-[var(--primary-color)] hover:text-[--primary-color] transition-all ease-in duration-200 dropdown dropdown-bottom"
-          (click)="toggleDropdown1()">
-          <span class="ml-2 text-sm font-medium">พยาธิตัวกลม</span>
+        <!-- พยาธิตัวกลม -->
+        <a class="flex items-center w-full h-12 px-3 mt-2 rounded
+        hover:bg-white hover:text-[var(--primary-color)]
+        hover:text-[--primary-color] transition-all ease-in duration-200
+        dropdown dropdown-bottom">
+          <span class="ml-2 text-sm font-medium" (click)="toggleDropdown1()">พยาธิตัวกลม</span>
         </a>
         <div class="mt-1 p-2 rounded-lg bg-[var(--secondary-color)] w-full text-[var(--primary-color)] text-sm"
           *ngIf="dropdown1">
-          <div *ngFor="let p of paraModel">
-            <div routerLink="/parasite/{{ p._id }}" class="rounded p-3 hover:bg-[var(--primary-color)] hover:text-white"
+          <div *ngFor="let p of paraModel"  class="m-5">
+            <a href="/parasite/{{ p._id }}" class="rounded p-3 hover:bg-[var(--primary-color)] hover:text-white"
               *ngIf="p.type == 'พยาธิตัวกลม'">
               {{ p.name }}
-            </div>
+            </a>
           </div>
         </div>
         <!-- <div class="h-[1px] w-full bg-[var(--blue-color)] mt-1"></div> -->
-
+        <!-- พยาธิตัวตืด -->
         <a class="flex items-center w-full h-12 px-3 mt-2 rounded
           hover:bg-white hover:text-[var(--primary-color)]
           hover:text-[--primary-color] transition-all ease-in duration-200">
@@ -56,24 +59,24 @@
         </a>
         <div class="mt-1 p-2 rounded-lg bg-[var(--secondary-color)] w-full text-[var(--primary-color)] text-sm"
           *ngIf="dropdown2">
-          <div *ngFor="let p of paraModel">
-            <div routerLink="/parasite/{{ p._id }}" class="rounded p-3 hover:bg-[var(--primary-color)] hover:text-white"
+          <div *ngFor="let p of paraModel" class="m-5">
+            <a href="/parasite/{{ p._id }}" class="p-2 rounded hover:bg-[var(--primary-color)] hover:text-white"
               *ngIf="p.type == 'พยาธิตัวตืด'">
               {{ p.name }}
-            </div>
+            </a>
           </div>
         </div>
         <!-- <div class="h-[1px] w-full bg-[var(--blue-color)] mt-1"></div> -->
-
+        <!-- พยาธิใบไม้ -->
         <a class="flex items-center w-full h-12 px-3 mt-2 rounded
           hover:bg-white hover:text-[var(--primary-color)]
           hover:text-[--primary-color] transition-all ease-in duration-200">
           <!-- <span class="ml-2 text-sm font-medium">พยาธิใบไม้</span> -->
           <div *ngFor="let p of paraModel">
-            <div routerLink="/parasite/{{ p._id }}" class="rounded p-3"
+            <a href="/parasite/{{ p._id }}" class="rounded p-3"
               *ngIf="p.type == 'พยาธิใบไม้'">
               {{ p.name }}
-            </div>
+            </a>
           </div>
         </a>
 
