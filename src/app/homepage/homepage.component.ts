@@ -160,15 +160,15 @@ export class HomepageComponent implements OnInit{
     this.loading = true;
     console.log(this.fd);
     this.predictAPI.predict(this.fd).subscribe(async (data) => {
-      this.loading = false;
       this.predictResult = data;
-      await this.delay(10);
       this.showResult = true;
+      await this.delay(10);
       this.graphModel1();
       this.graphModel2();
       this.graphModel3();
-
+      this.loading = false;
     });
+
   }
 
   delay(ms: number) {
