@@ -163,10 +163,10 @@ export class HomepageComponent implements OnInit{
       this.predictResult = data;
       this.showResult = true;
       await this.delay(10);
+      this.loading = false;
       this.graphModel1();
       this.graphModel2();
       this.graphModel3();
-      this.loading = false;
     });
 
   }
