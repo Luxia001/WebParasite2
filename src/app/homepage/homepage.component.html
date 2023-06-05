@@ -224,57 +224,10 @@
   </div>
 </div> -->
 
-<!-- สรุปผล
+
 
 <div class="flex justify-center items-center mt-5" *ngIf="showResult">
-  <div class="rounded-full p-2 m-5 bg-[#E0E0E0] max-w-2xl w-full">
-    <div class="text-center">
-      <span class="mt-[5%] font-bold text-xl text-[#000000]"
-        >สรุปผลการทำนาย</span
-      >
-    </div>
-    <div class="text-center">
-      <div class="bg-gray-200 justify-between">
-        <span>พยาธิตัวกลม : </span>
-        <span class="text-blue-500 font-black"
-          >{{
-            (predictResult.result[0].RoundWorms +
-              predictResult.result[1].RoundWorms +
-              predictResult.result[2].RoundWorms) /
-              3
-          }}%</span
-        >
-      </div>
-      <div class="">
-        <span>พยาธิตัวตืด : </span>
-        <span class="text-green-500 font-black"
-          >{{
-            (predictResult.result[0].TapeWorms +
-              predictResult.result[1].TapeWorms +
-              predictResult.result[2].TapeWorms) /
-              3
-          }}%</span
-        >
-      </div>
-      <div class="">
-        <span>พยาธิใบไม้ : </span>
-        <span class="text-yellow-500 font-black"
-          >{{
-            (predictResult.result[0].Fluke +
-              predictResult.result[1].Fluke +
-              predictResult.result[2].Fluke) /
-              3
-          }}%</span
-        >
-      </div>
-    </div>
-  </div>
-</div>
-
- -->
-
-<div class="flex justify-center items-center mt-5" *ngIf="showResult">
-  <div class="max-w-2xl w-full bg-[#AD99FF] rounded-xl p-3 m-5">
+  <div class="max-w-2xl w-full bg-[#AD99FF] rounded-xl p-3">
     <div class="text-center">
       <span class="mt-[5%] font-bold text-xl text-[#ffffff]">ผลการทำนาย</span>
     </div>
@@ -291,17 +244,17 @@
         <div class="flex justify-between items-center pt-5 w-1/2">
           <div class="justify-center text-center">
             <span class="text-sky-500 font-black"
-              >{{ predictResult.result[0].RoundWorms }}%</span
+              >{{ (predictResult.result[0].RoundWorms).toFixed(2)}}%</span
             >
           </div>
           <div class="justify-center text-center">
             <span class="text-green-500 font-black"
-              >{{ predictResult.result[0].TapeWorms }}%</span
+              >{{ (predictResult.result[0].TapeWorms).toFixed(2) }}%</span
             >
           </div>
           <div class="justify-center text-center">
             <span class="text-yellow-500 font-black"
-              >{{ predictResult.result[0].Fluke }}%</span
+              >{{ (predictResult.result[0].Fluke).toFixed(2) }}%</span
             >
           </div>
         </div>
@@ -318,17 +271,17 @@
         <div class="flex justify-between items-center pt-5 w-1/2">
           <div class="justify-center text-center">
             <span class="text-sky-500 font-black"
-              >{{ predictResult.result[1].RoundWorms }}%</span
+              >{{ (predictResult.result[1].RoundWorms).toFixed(2) }}%</span
             >
           </div>
           <div class="justify-center text-center">
             <span class="text-green-500 font-black"
-              >{{ predictResult.result[1].TapeWorms }}%</span
+              >{{ (predictResult.result[1].TapeWorms).toFixed(2) }}%</span
             >
           </div>
           <div class="justify-center text-center">
             <span class="text-yellow-500 font-black"
-              >{{ predictResult.result[1].Fluke }}%</span
+              >{{ (predictResult.result[1].Fluke).toFixed(2) }}%</span
             >
           </div>
         </div>
@@ -345,17 +298,17 @@
         <div class="flex justify-between items-center pt-5 w-1/2">
           <div class="justify-center text-center">
             <span class="text-sky-500 font-black"
-              >{{ predictResult.result[2].RoundWorms }}%</span
+              >{{ (predictResult.result[2].RoundWorms).toFixed(2) }}%</span
             >
           </div>
           <div class="justify-center text-center">
             <span class="text-green-500 font-black"
-              >{{ predictResult.result[2].TapeWorms }}%</span
+              >{{ (predictResult.result[2].TapeWorms).toFixed(2) }}%</span
             >
           </div>
           <div class="justify-center text-center">
             <span class="text-yellow-500 font-black"
-              >{{ predictResult.result[2].Fluke }}%</span
+              >{{ (predictResult.result[2].Fluke).toFixed(2) }}%</span
             >
           </div>
         </div>
@@ -370,10 +323,57 @@
 >
   <div class="loader loader13">
     <svg class="w-20 h-20" fill="#4FB95C" viewBox="0 0 30 30">
-      <circle cx="4" cy="4" r="4" />
-      <circle cx="4" cy="26" r="4" />
-      <circle cx="26" cy="4" r="4" />
-      <circle cx="26" cy="26" r="4" />
+      <circle fill="#10D1F5" cx="4" cy="4" r="4" />
+      <circle fill="#07D10C" cx="4" cy="26" r="4" />
+      <circle fill="#0F4FF1" cx="26" cy="4" r="4" />
+      <circle fill="#F2DF17" cx="26" cy="26" r="4" />
     </svg>
+  </div>
+</div>
+
+<!-- สรุปผล -->
+
+<div class="flex justify-center items-center" *ngIf="showResult">
+  <div class="rounded-xl p-2 m-5 bg-[#E0E0E0] max-w-2xl w-full">
+    <div class="text-center">
+      <span class="mt-[5%] font-bold text-xl text-[#000000]"
+        >สรุปผลการทำนาย</span
+      >
+    </div>
+    <div class="text-center place-content-center grid grid-cols-1">
+      <div class="bg-gray-200 ">
+        <span>พยาธิตัวกลม : </span>
+        <span class="text-blue-500 font-black"
+          >{{
+            ((predictResult.result[0].RoundWorms +
+              predictResult.result[1].RoundWorms +
+              predictResult.result[2].RoundWorms) /
+              3.0).toFixed(2)
+          }}%</span
+        >
+      </div>
+      <div class=" ">
+        <span>พยาธิตัวตืด : </span>
+        <span class="text-green-500 font-black"
+          >{{
+            ((predictResult.result[0].TapeWorms +
+              predictResult.result[1].TapeWorms +
+              predictResult.result[2].TapeWorms) /
+              3.0).toFixed(2)
+          }}%</span
+        >
+      </div>
+      <div class=" ">
+        <span>พยาธิใบไม้ : </span>
+        <span class="text-yellow-500 font-black"
+          >{{
+            ((predictResult.result[0].Fluke +
+              predictResult.result[1].Fluke +
+              predictResult.result[2].Fluke) /
+              3.0).toFixed(2)
+          }}%</span
+        >
+      </div>
+    </div>
   </div>
 </div>
